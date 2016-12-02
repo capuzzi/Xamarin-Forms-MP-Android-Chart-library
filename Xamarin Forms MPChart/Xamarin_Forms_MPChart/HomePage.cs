@@ -20,6 +20,7 @@ namespace Xamarin_Forms_MPChart
         {
             Double[] arrValues = new Double[] {1,2};
 
+            //send a message to the subscriber to open a new form
             MessagingCenter.Send(this,"message",new NativeNavigationArgs(new PageToNativeBarChart(),arrValues));
         }
     }

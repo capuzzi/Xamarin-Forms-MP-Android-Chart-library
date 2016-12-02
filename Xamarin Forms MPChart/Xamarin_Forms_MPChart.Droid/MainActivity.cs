@@ -19,6 +19,7 @@ namespace Xamarin_Forms_MPChart.Droid
 		{
 			base.OnCreate (bundle);
 
+            //receive message and handle it
             MessagingCenter.Subscribe<HomePage, NativeNavigationArgs>(this,"message", HandleNativeNavigationArgs);
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
@@ -27,9 +28,9 @@ namespace Xamarin_Forms_MPChart.Droid
 
         private void HandleNativeNavigationArgs(HomePage sender, NativeNavigationArgs args)
         {
+            //when receive message open a new Activity using Android Intent
             Intent activity = new Intent(this, typeof(BarChartActivity));
             StartActivity(activity);
-
         }
 	}
 }

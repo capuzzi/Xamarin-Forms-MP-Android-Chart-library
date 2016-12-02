@@ -62,18 +62,11 @@ namespace Xamarin_Forms_MPChart.Droid
             DayAxisValueFormatter xAxisFormatter = new DayAxisValueFormatter(mChart);
 
             XAxis xAxis = mChart.XAxis;
-            //xAxis.setPosition(XAxisPosition.BOTTOM);
-            //xAxis.setTypeface(mTfLight);
             xaxis.SetDrawGridLines(false);
-            //xAxis.setGranularity(1f); // only intervals of 1 day
-            //xAxis.setLabelCount(7);
             xaxis.SetLabelCount(7, false);
-            //xaxis.ValueFormatter = xAxisFormatter;
 
             setData(12, 50);
    
-
-            //relLayout.AddView(tvX);
             relLayout.AddView(mChart, 650, 1000);
 
 
@@ -89,6 +82,7 @@ namespace Xamarin_Forms_MPChart.Droid
             for (int i = (int)start; i < start + count + 1; i++)
             {
                 float mult = (range + 1);
+                //random data
                 float val = (float)(Java.Lang.Math.Random() * mult);
                 yVals1.Add(new BarEntry(i, val));
             }
